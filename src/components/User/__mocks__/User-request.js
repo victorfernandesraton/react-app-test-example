@@ -51,6 +51,9 @@ export const getUser = async (username) => {
       },
     });
   } else {
-    return Promise.resolve({ data: { ...NotFoundUser }, status: 404 });
+    return Promise.reject({
+      data: { ...NotFoundUser },
+      status: 404,
+    });
   }
 };

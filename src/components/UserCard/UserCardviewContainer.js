@@ -22,6 +22,12 @@ function UserCardviewContainer(props) {
     return <h1>Carregando</h1>;
   }
 
+  if (error?.status === 404) {
+    return <h1>Usuário {username} não encontrado</h1>;
+  } else if (error?.status) {
+    return <h1>Erro na requisição</h1>;
+  }
+
   return (
     <div
       style={{
@@ -46,7 +52,7 @@ function UserCardviewContainer(props) {
       <div style={{ justifyContent: "center", display: "flex" }}>
         <h1>
           {parseUsername({
-            first_name: user?.name.split(" ")?.[0],
+            first_name: user?.name?.split(" ")?.[0],
             last_name: user?.name?.split(" ")?.[1],
             username: user?.login,
           })}

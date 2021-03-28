@@ -31,5 +31,18 @@ describe("UserCard", () => {
       );
       expect(container.querySelector("img").alt).toBe("victorfernandesraton2");
     });
+
+    test("should not found user", async () => {
+      await act(async () => {
+        render(
+          <UserCardviewContainer match={{ params: { username: "pedro2" } }} />,
+          container
+        );
+      });
+
+      expect(container.querySelector("h1").textContent).toBe(
+        "Usuário pedro2 não encontrado"
+      );
+    });
   });
 });

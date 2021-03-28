@@ -12,7 +12,7 @@ export const Reducer = (state = initialState, { type, payload }) => {
     case reducerTypes.LOADING:
       return { ...state, loading: false };
     case reducerTypes.ERROR:
-      return { ...state, loading: true, ...payload };
+      return { ...state, loading: false, ...payload };
     case reducerTypes.SUCESS:
       return { ...state, loading: false, called: true, ...payload };
 
