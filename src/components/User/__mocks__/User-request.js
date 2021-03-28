@@ -4,7 +4,7 @@ const NotFoundUser = {
 };
 
 export const getUser = async (username) => {
-  if (username != "pedro2") {
+  if (username !== "pedro2") {
     return Promise.resolve({
       status: 200,
       data: {
