@@ -1,4 +1,3 @@
-import * as axios from "axios";
 import { getUser } from "../User-request";
 
 jest.mock("../User-request");
